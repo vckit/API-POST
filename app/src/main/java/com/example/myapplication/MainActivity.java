@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        // Обработка кнопки
         checkPasswordButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Проверка пароля
+    // Проверяем пароль на наличие нижнего регистра, верхнего регистра и цифры
     private boolean isSecurePassword(String password) {
         int minLength = 8;
         boolean hasUpperCase = false;
@@ -82,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
         return hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
     }
 
-
         private boolean isValidEmail(CharSequence target) {
         if (target == null) {
             return false;
@@ -90,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
     }
 
+    // Метод для тебя :)
+    // Генерация пароля должно происходит на стороне сервера
     private String generateRandomPassword(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&*";
         StringBuilder password = new StringBuilder();
